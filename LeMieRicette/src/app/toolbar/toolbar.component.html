@@ -3,7 +3,6 @@
     <ion-tab-button tab="home">
       <ion-icon name="home"></ion-icon>
       <ion-label>Home</ion-label>
-      <ion-badge>6</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="albums">
@@ -11,12 +10,12 @@
       <ion-label>Le mie ricette</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="pizza">
+    <ion-tab-button (click)="sendToFrigorifero()">
       <ion-icon name="pizza"></ion-icon>
       <ion-label>Frigorifero</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="strumenti">
+    <ion-tab-button (click)="sendToStrumenti()">
       <ion-icon name="settings"></ion-icon>
       <ion-label>Strumenti</ion-label>
     </ion-tab-button>
