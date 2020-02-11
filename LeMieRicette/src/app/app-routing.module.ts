@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'forgot',
     loadChildren: () => import('./auth/forgot/forgot.module').then( m => m.ForgotPageModule)
+  },
+  {
+    path: 'strumenti',
+    loadChildren: () => import('./tab/strumenti/strumenti.module').then( m => m.StrumentiPageModule)
+  },
+  {
+    path: 'frigorifero',
+    loadChildren: () => import('./tab/frigorifero/frigorifero.module').then( m => m.FrigoriferoPageModule)
   }
 
 ];
