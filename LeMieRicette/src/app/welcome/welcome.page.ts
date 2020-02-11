@@ -12,7 +12,7 @@ export class WelcomePage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.routes.navigateByUrl('strumenti');
+      this.routes.navigateByUrl('home');
     }, 2000);
   }
 

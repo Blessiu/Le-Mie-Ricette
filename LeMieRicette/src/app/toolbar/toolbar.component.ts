@@ -18,5 +18,11 @@ export class ToolbarComponent implements OnInit {
   sendToFrigorifero(){
     this.routes.navigateByUrl('frigorifero');
   }
+  sendToHome(){
+    this.routes.navigateByUrl('home');
+  }
+  sendToLeMieRicette(){
+    this.routes.navigateByUrl('le-mie-ricette');
+  }
 
 }

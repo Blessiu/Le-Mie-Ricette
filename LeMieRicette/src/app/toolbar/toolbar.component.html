@@ -1,11 +1,11 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button (click)="sendToHome()">
       <ion-icon name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="albums">
+    <ion-tab-button (click)="sendToLeMieRicette()">
       <ion-icon name="albums"></ion-icon>
       <ion-label>Le mie ricette</ion-label>
     </ion-tab-button>
