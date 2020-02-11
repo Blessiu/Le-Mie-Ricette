@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>forgot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input placeholder="Username" [(ngModel)]="user" type="text"></ion-input>
+    </ion-item>
+
+    <div class="btn-center-align">
+      <ion-button color="primary" shape="round" (click)="forgot()">Submit</ion-button>
+    </div>
+  </ion-list>
+</ion-content>

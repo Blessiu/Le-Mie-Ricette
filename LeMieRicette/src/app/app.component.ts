@@ -26,6 +26,16 @@ export class AppComponent {
       title: 'Info',
       url: '/info',
       icon: 'information-circle'
+    },
+    {
+      title: 'Language',
+      url: '/language',
+      icon: 'options'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'contact'
     }
   ];
 
