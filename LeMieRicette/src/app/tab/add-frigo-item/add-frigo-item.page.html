@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Aggiungi ingrediente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="ion-padding">
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="filterJSONData($event)"></ion-searchbar>
+  </ion-toolbar>
+</div>
+
+<ion-content>
+  <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{item.name}}</ion-item>
+</ion-content>

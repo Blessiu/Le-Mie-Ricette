@@ -11,8 +11,7 @@
 
 <ion-content>
   <div class="div-align-center">
-    <ion-button color="light" id="frigo-button">Aggiungi ingredienti</ion-button>
-    <button id="frigo-button">Aggiungi ingredienti</button>
+    <ion-button color="danger" (click)="goToAddFrigoItem()">Aggiungi ingredienti</ion-button>
   </div>
   
   <ion-list>
@@ -23,10 +22,9 @@
       </div>
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
+  <div class="div-align-center" id="final">
+    <ion-button color="danger">Vedi le ricette</ion-button>
+  </div>
 </ion-content>
   <app-toolbar></app-toolbar>
