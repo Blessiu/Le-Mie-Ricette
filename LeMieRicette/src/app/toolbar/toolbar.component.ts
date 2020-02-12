@@ -24,5 +24,8 @@ export class ToolbarComponent implements OnInit {
   sendToLeMieRicette(){
     this.routes.navigateByUrl('le-mie-ricette');
   }
+  sendToAddRicetta(){
+    this.routes.navigateByUrl('add-ricetta');
+  }
 
 }

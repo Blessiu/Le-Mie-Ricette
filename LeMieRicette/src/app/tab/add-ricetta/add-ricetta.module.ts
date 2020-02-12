@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddRicettaPageRoutingModule } from './add-ricetta-routing.module';
 
 import { AddRicettaPage } from './add-ricetta.page';
-import { ComponentsModule } from '../components.module';
+import { ComponentsModule } from '../../components.module';
 
 @NgModule({
   imports: [
