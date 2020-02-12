@@ -13,11 +13,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public appPages = [
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
-    {
       title: 'Info',
       url: '/info',
       icon: 'information-circle'

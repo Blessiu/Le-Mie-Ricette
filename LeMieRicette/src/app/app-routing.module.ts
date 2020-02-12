@@ -8,10 +8,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },
-  {
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   },
@@ -46,7 +42,8 @@ const routes: Routes = [
   {
     path: 'le-mie-ricette',
     loadChildren: () => import('./tab/le-mie-ricette/le-mie-ricette.module').then( m => m.LeMieRicettePageModule)
-  },  {
+  },
+  {
     path: 'add-ricetta',
     loadChildren: () => import('./tab/add-ricetta/add-ricetta.module').then( m => m.AddRicettaPageModule)
   }
