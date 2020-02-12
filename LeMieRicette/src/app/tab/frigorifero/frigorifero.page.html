@@ -10,10 +10,15 @@
 </ion-header>
 
 <ion-content>
+  <div class="div-align-center">
+    <ion-button color="light" id="frigo-button">Aggiungi ingredienti</ion-button>
+    <button id="frigo-button">Aggiungi ingredienti</button>
+  </div>
+  
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{item}}
-      <div class="item-note" slot="end" (click)="deleteElement(item)">
+      <div class="item-note" slot="end" (click)="deleteElement(item)" id="delete">
         X
       </div>
     </ion-item>
