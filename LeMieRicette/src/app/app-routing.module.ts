@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'calcolatrice',
     loadChildren: () => import('./tab/calcolatrice/calcolatrice.module').then( m => m.CalcolatricePageModule)
+  },
+  {
+    path: 'timer',
+    loadChildren: () => import('./tab/timer/timer.module').then( m => m.TimerPageModule)
   }
 
 
