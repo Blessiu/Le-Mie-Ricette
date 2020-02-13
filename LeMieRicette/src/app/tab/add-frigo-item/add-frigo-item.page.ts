@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FrigoriferoPage } from '../frigorifero/frigorifero.page';
-
+declare var window;
 @Component({
   selector: 'app-add-frigo-item',
   templateUrl: './add-frigo-item.page.html',
@@ -115,6 +114,7 @@ export class AddFrigoItemPage implements OnInit {
       if(item.isChecked){
         console.log(i + ") " + item.name);
         i++;
+        window.frigorifero.addIngredient(item.name);
       }
     }
     this.routes.navigateByUrl('frigorifero');

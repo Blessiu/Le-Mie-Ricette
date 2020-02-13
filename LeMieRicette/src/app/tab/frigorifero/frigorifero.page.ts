@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+declare var window;
 @Component({
   selector: 'app-frigorifero',
   templateUrl: './frigorifero.page.html',
@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 export class FrigoriferoPage implements OnInit {
   public items: string[] = [];
   constructor(private routes: Router) {
-    for (let i = 0; i < 15; i++) {
-      this.items.push('Item ' + i);
-    }
+    window.frigorifero = this;
   }
 
   addIngredient(ingredient:string){
