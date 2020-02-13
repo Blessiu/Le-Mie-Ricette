@@ -8,51 +8,27 @@ import { isNumber } from 'util';
 })
 export class CalcolatricePage implements OnInit {
 
-  constructor() { }
+  result = "";
 
-  ngOnInit() {
-  }
-  value = '0';
-  oldValue = '0';
+	constructor() { }
 
-  lastOperator = 'x';
-  readyForNewInput = true;
-  numberGroups = [
-    [7, 8, 9, 'x'],
-    [4, 5, 6, '-'],
-    [1, 2, 3, '+'],
-    [0, 'c', '/', '=']
-  ];
+	ngOnInit() {
+	}
 
-  onButtonPress(symbol) {
-
-    if (isNumber(symbol)) {
-      if (this.readyForNewInput)
-        this.value = '' + symbol;
-      else
-        this.value += '' + symbol;
-      this.readyForNewInput = false;
-    }
-    else if (symbol === 'c') {
-      this.value = '0';
-      this.readyForNewInput = true;
-    }
-    else if (symbol === '=') {
-      if (this.lastOperator === 'x')
-        this.value = '' + (parseInt(this.oldValue) * parseInt(this.value));
-      else if (this.lastOperator === '-')
-        this.value = '' + (parseInt(this.oldValue) - parseInt(this.value));
-      else if (this.lastOperator === '+')
-        this.value = '' + (parseInt(this.oldValue) + parseInt(this.value));
-      else if (this.lastOperator === '/')
-        this.value = '' + (parseInt(this.oldValue) / parseInt(this.value));
-      this.readyForNewInput = true;
-    }
-    else { // operator
-      this.readyForNewInput = true;
-      this.oldValue = this.value;
-      this.lastOperator = symbol;
-    }
-  }
+	btnClicked(btn) {
+		if (btn == "C") {
+			this.result = "";
+		} else if (btn == "=") {
+			this.result = eval(this.result);
+		} else if (btn == "squareroot") {
+			this.result = Math.sqrt(eval(this.result)) + "";
+		} else if (btn == "square") {
+			this.result = eval("(" + this.result + ") * ( " + this.result + ")");
+		} else if (btn == "reciproc") {
+			this.result = eval(1 + "/ (" + this.result + ")");
+		} else {
+			this.result += btn;
+		}
+	}
 
 }
