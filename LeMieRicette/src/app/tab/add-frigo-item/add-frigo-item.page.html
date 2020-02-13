@@ -16,5 +16,13 @@
 </div>
 
 <ion-content>
-  <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{item.name}}</ion-item>
+  <ion-item *ngFor="let item of jsonData">
+    <ion-label>{{item.name}}</ion-label>
+    <ion-checkbox color="danger" slot="start" [(ngModel)]="item.isChecked"></ion-checkbox>
+  </ion-item>
+
 </ion-content>
+
+<div class="ion-padding">
+  <ion-button expand="block" vertical="bottom" horizontal="center" slot="fixed" color="danger" (click)="showCheckedValue()">Conferma</ion-button>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-frigo-item',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AddFrigoItemPage implements OnInit {
 
   jsonData:any=[];
-  constructor() {
+  numOfIngredient:number;
+  constructor(private routes: Router) {
     this.inizializzaJSONData();
    }
 
@@ -25,28 +27,95 @@ export class AddFrigoItemPage implements OnInit {
     }
   }
 
-  selectVal(val){
-    console.log("Hai selezionato "+val);
-  }
-
   inizializzaJSONData(){
     this.jsonData = [
       {
-        "name": "Equador",
-        "code": "ec"
+        "name": "Acciughe",
+        "isChecked": false
       },
       {
-        "name": "England",
-        "code": "en"
+        "name": "Latte",
+        "isChecked": false
       },
       {
-        "name": "Italy",
-        "code": "it"
+        "name": "Cipolle",
+        "isChecked": false
       },
       {
-        "name": "France",
-        "code": "fr"
+        "name": "Pomodoro",
+        "isChecked": false
+      },
+      {
+        "name": "Spaghetti",
+        "isChecked": false
+      },
+      {
+        "name": "Orecchiette",
+        "isChecked": false
+      },
+      {
+        "name": "Burro",
+        "isChecked": false
+      },
+      {
+        "name": "Vino rosso",
+        "isChecked": false
+      },
+      {
+        "name": "Aceto",
+        "isChecked": false
+      },
+      {
+        "name": "Lattuga",
+        "isChecked": false
+      },
+      {
+        "name": "Cicoria",
+        "isChecked": false
+      },
+      {
+        "name": "Patate",
+        "isChecked": false
+      },
+      {
+        "name": "Passata di pomodoro",
+        "isChecked": false
+      },
+      {
+        "name": "Pancetta",
+        "isChecked": true
+      },
+      {
+        "name": "Guanciale",
+        "isChecked": false
+      },
+      {
+        "name": "Salsiccia",
+        "isChecked": false
       }
     ];
+  }
+
+  loadNumOfIngredientSelected(){
+    let i = 0;
+    for(let item of this.jsonData){
+      if(item.isChecked){
+        console.log(item.name);
+        i++;
+      }
+    }
+    this.numOfIngredient = i;
+  }
+
+  showCheckedValue(){
+    console.log("Ingredienti selezionati:");
+    let i = 1;
+    for(let item of this.jsonData){
+      if(item.isChecked){
+        console.log(i + ") " + item.name);
+        i++;
+      }
+    }
+    this.routes.navigateByUrl('frigorifero');
   }
 }
