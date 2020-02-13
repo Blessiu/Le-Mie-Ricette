@@ -7,12 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./frigorifero.page.scss'],
 })
 export class FrigoriferoPage implements OnInit {
-  private selectedItem: any;
   public items: string[] = [];
   constructor(private routes: Router) {
     for (let i = 0; i < 15; i++) {
       this.items.push('Item ' + i);
     }
+  }
+
+  addIngredient(ingredient:string){
+    this.items.push(ingredient);
   }
 
   deleteElement(item:string){
@@ -25,8 +28,5 @@ export class FrigoriferoPage implements OnInit {
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+  
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { FrigoriferoPage } from '../frigorifero/frigorifero.page';
 
 @Component({
   selector: 'app-add-frigo-item',
@@ -9,9 +10,10 @@ import { Routes, Router } from '@angular/router';
 export class AddFrigoItemPage implements OnInit {
 
   jsonData:any=[];
-  numOfIngredient:number;
+  public numOfIngredient:number;
   constructor(private routes: Router) {
     this.inizializzaJSONData();
+    this.loadNumOfIngredientSelected();
    }
 
   ngOnInit() {
@@ -83,7 +85,7 @@ export class AddFrigoItemPage implements OnInit {
       },
       {
         "name": "Pancetta",
-        "isChecked": true
+        "isChecked": false
       },
       {
         "name": "Guanciale",
@@ -100,7 +102,6 @@ export class AddFrigoItemPage implements OnInit {
     let i = 0;
     for(let item of this.jsonData){
       if(item.isChecked){
-        console.log(item.name);
         i++;
       }
     }
