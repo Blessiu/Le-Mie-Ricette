@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calcolatrice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="value">
+      {{value}}
+    </ion-label>
+  </ion-item>
+  <div *ngFor="let numGroup of numberGroups">
+    <ion-button *ngFor="let num of numGroup" (click)="onButtonPress(num)" class="calc-button">{{num}}</ion-button>
+  </div>
+</ion-content>

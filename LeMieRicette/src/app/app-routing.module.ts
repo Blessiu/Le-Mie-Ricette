@@ -49,6 +49,10 @@ const routes: Routes = [
   },  {
     path: 'add-frigo-item',
     loadChildren: () => import('./tab/add-frigo-item/add-frigo-item.module').then( m => m.AddFrigoItemPageModule)
+  },
+  {
+    path: 'calcolatrice',
+    loadChildren: () => import('./tab/calcolatrice/calcolatrice.module').then( m => m.CalcolatricePageModule)
   }
 
 
