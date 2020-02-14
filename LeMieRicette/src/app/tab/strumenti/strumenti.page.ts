@@ -16,5 +16,8 @@ export class StrumentiPage implements OnInit {
   goToCalcolatrice(){
     this.router.navigateByUrl('calcolatrice');
   }
+  goToTimer(){
+    this.router.navigateByUrl('timer');
+  }
 
 }

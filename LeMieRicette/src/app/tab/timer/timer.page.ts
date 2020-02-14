@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './timer.page.html',
   styleUrls: ['./timer.page.scss'],
 })
+
 export class TimerPage implements OnInit {
 
-  constructor() { }
+  constructor() {}
+  mydate:any;
+  
 
   ngOnInit() {
   }
 
+  doSomething(item) {
+    console.log(item.detail.value);
+ }
+
+  
 }

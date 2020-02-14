@@ -8,15 +8,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card (click)="goToTimer()">
     <img src="../../assets/timer.png" />
     <ion-card-header>
       <ion-card-subtitle>timer</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="goToCalcolatrice()">
     <img src="../../assets/calculator.png" />
-    <ion-card-header (click)="goToCalcolatrice()">
+    <ion-card-header>
       <ion-card-subtitle>calcolatrice</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
