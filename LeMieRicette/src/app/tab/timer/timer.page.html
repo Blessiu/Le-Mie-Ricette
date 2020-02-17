@@ -8,12 +8,18 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+
   <ion-item>
     <ion-label>Imposta il timer...</ion-label>
     <ion-datetime displayFormat="mm" [(ngModel)]="mydate" (ionChange)="doSomething($event)"></ion-datetime>
   </ion-item>
-  {{tempo}}
+
+  <div class="center-align">
+    <ion-label><a id="timer">{{tempo}}</a>s</ion-label>
+  </div>
+  
   <ion-button expand="block" color="success" id="alarmButton" style="display:none;" (click)="start()">Start</ion-button>
   <ion-button expand="block" color="danger" id="pausaAlarmBtn" style="display:none;" (click)="pausaAlarm()">Pausa</ion-button>
   <ion-button expand="block" color="danger" id="alarmStop" style="display:none;" (click)="stop()">Stop</ion-button>
+
 </ion-content>

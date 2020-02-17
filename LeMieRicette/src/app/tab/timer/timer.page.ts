@@ -46,7 +46,6 @@ export class TimerPage implements OnInit {
         this.alarmSound.play();
         document.getElementById('alarmStop').style.display = '';
         document.getElementById('pausaAlarmBtn').style.display = 'none';
-        console.log("tempo scaduto");
         clearInterval(this.intervalVar);
        } else{
          this.tempo--;
