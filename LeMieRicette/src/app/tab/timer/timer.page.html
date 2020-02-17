@@ -10,7 +10,6 @@
 <ion-content class="ion-padding">
   <ion-item>
     <ion-label>Imposta il timer...</ion-label>
-    <ion-datetime displayFormat="mm" [(ngModel)]="mydate" (ionChange)="doSomething($event)"></ion-datetime>
+    <ion-datetime displayFormat="mm" [(ngModel)]="mydate" (ionChange)="doSomething($event)" value="2020-01-01T00:00"></ion-datetime>
   </ion-item>
-  {{valore}}
 </ion-content>

@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class TimerPage implements OnInit {
 
-  constructor() {}
   mydate:any;
+  constructor() {
+    this.mydate = 0;
+  }
+  
   
 
   ngOnInit() {
@@ -17,6 +20,9 @@ export class TimerPage implements OnInit {
 
   doSomething(item) {
     console.log(item.detail.value);
+    let d = new Date(item.detail.value);
+    let mm = d.getMinutes();
+    console.log(mm);
  }
 
   
