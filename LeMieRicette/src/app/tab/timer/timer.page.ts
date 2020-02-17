@@ -9,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class TimerPage implements OnInit {
 
   mydate:any;
+  tempo:number;
+  mm:number;
   constructor() {
     this.mydate = 0;
+    this.tempo = 0;
   }
   
   
@@ -19,11 +22,17 @@ export class TimerPage implements OnInit {
   }
 
   doSomething(item) {
-    console.log(item.detail.value);
     let d = new Date(item.detail.value);
-    let mm = d.getMinutes();
-    console.log(mm);
- }
+    this.mm = d.getMinutes();
+    console.log(typeof this.mm);
+    this.tempo = this.mm;
+    this.startTimer();
+  }
+  startTimer(){
+    this.tempo--;
+    console.log('start');
+    setTimeout(this.startTimer, 1000);
+  }
 
   
 }
