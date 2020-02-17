@@ -13,4 +13,7 @@
     <ion-datetime displayFormat="mm" [(ngModel)]="mydate" (ionChange)="doSomething($event)"></ion-datetime>
   </ion-item>
   {{tempo}}
+  <ion-button expand="block" color="success" id="alarmButton" style="display:none;" (click)="start()">Start</ion-button>
+  <ion-button expand="block" color="danger" id="pausaAlarmBtn" style="display:none;" (click)="pausaAlarm()">Pausa</ion-button>
+  <ion-button expand="block" color="danger" id="alarmStop" style="display:none;" (click)="stop()">Stop</ion-button>
 </ion-content>
