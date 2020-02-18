@@ -15,9 +15,13 @@ export class TimerPage implements OnInit {
   mm:number;
   intervalVar:any;
   alarmSound = new Audio();
+  minuti:number;
+  secondi:number;
   constructor() {
     this.mydate = 0;
     this.tempo = 0;
+    this.minuti = 0;
+    this.secondi = 0;
   }
   
   
@@ -29,43 +33,74 @@ export class TimerPage implements OnInit {
     let d = new Date(item.detail.value);
     this.mm = d.getMinutes();
     this.tempo = this.mm;
+    this.minuti = this.tempo;
     if(this.tempo != 0){
-      document.getElementById('alarmButton').style.display = '';
+      document.getElementById('start').style.display = '';
     }
   }
 
   start(){
-    document.getElementById('alarmStop').style.display = 'none';
-    document.getElementById('pausaAlarmBtn').style.display = '';
-    document.getElementById('alarmButton').style.display = 'none';
+    this.minuti--;
+    this.secondi = 59;
+    document.getElementById('stop').style.display = 'none';
+    document.getElementById('pausa').style.display = '';
+    document.getElementById('start').style.display = 'none';
     this.alarmSound.src = '../../assets/alarm.mp3';
-    this.intervalVar= setInterval(
+    this.intervalVar = setInterval(
       function(){
-       if(this.tempo < 2){
-        this.tempo--;
+       if(this.minuti < 1 && this.secondi < 2){
+        this.secondi--;
         this.alarmSound.play();
-        document.getElementById('alarmStop').style.display = '';
-        document.getElementById('pausaAlarmBtn').style.display = 'none';
+        document.getElementById('stop').style.display = '';
+        document.getElementById('pausa').style.display = 'none';
         clearInterval(this.intervalVar);
        } else{
-         this.tempo--;
+         if(this.secondi == 0){
+           this.minuti--;
+           this.secondi = 59;
+         }
+         this.secondi--;
        }
      }.bind(this),1000);
   }
 
-  pausaAlarm() {
-    document.getElementById('alarmButton').style.display = '';
-    document.getElementById('pausaAlarmBtn').style.display = 'none';
-    document.getElementById('alarmStop').style.display = '';
+  pausa() {
+    document.getElementById('continue').style.display = '';
+    document.getElementById('pausa').style.display = 'none';
+    document.getElementById('stop').style.display = '';
     clearInterval(this.intervalVar);
   }
 
   stop(){
     this.mydate = 0;
+    this.minuti = 0;
+    this.secondi = 0;
     this.tempo = 0;
     this.alarmSound.pause();
-    document.getElementById('alarmStop').style.display = 'none';
-    document.getElementById('alarmButton').style.display = 'none';
+    document.getElementById('stop').style.display = 'none';
+    document.getElementById('start').style.display = 'none';
+  }
+
+  continue(){
+    document.getElementById('stop').style.display = 'none';
+    document.getElementById('pausa').style.display = '';
+    document.getElementById('continue').style.display = 'none';
+    this.intervalVar = setInterval(
+      function(){
+       if(this.minuti < 1 && this.secondi < 2){
+        this.secondi--;
+        this.alarmSound.play();
+        document.getElementById('stop').style.display = '';
+        document.getElementById('pausa').style.display = 'none';
+        clearInterval(this.intervalVar);
+       } else{
+         if(this.secondi == 0){
+           this.minuti--;
+           this.secondi = 59;
+         }
+         this.secondi--;
+       }
+     }.bind(this),1000);
   }
   
 }
