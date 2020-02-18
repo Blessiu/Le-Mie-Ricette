@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Convertitore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Alimento</ion-label>
+    <ion-select value="Acqua">
+      <ion-select-option *ngFor="let item of jsonData">{{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

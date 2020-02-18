@@ -19,5 +19,8 @@ export class StrumentiPage implements OnInit {
   goToTimer(){
     this.router.navigateByUrl('timer');
   }
+  goToConvertitore(){
+    this.router.navigateByUrl('convertitore');
+  }
 
 }

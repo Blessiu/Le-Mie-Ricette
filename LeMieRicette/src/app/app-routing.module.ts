@@ -57,6 +57,10 @@ const routes: Routes = [
   {
     path: 'timer',
     loadChildren: () => import('./tab/timer/timer.module').then( m => m.TimerPageModule)
+  },
+  {
+    path: 'convertitore',
+    loadChildren: () => import('./tab/convertitore/convertitore.module').then( m => m.ConvertitorePageModule)
   }
 
 
