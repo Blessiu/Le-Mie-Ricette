@@ -8,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class ConvertitorePage implements OnInit {
 
   jsonData:any=[];
+  selectedItem:string;
+  valueItem:number;
+  valute:string[]=["Kg", "gr", "Litri", "ml"];
+  valutaDa:string;
+  valutaA:string;
+  valoreDa:number;
+  valoreA:number;
 
   constructor() {
     this.inizializzaJSONData();
+    this.valutaDa = "Kg";
+    this.valutaA = "Litri";
    }
 
   ngOnInit() {
@@ -75,6 +84,109 @@ export class ConvertitorePage implements OnInit {
         "valore": 0.55
       }
     ];
+  }
+
+  doSomething(item) {
+    this.selectedItem = item.detail.value;
+    for(let item of this.jsonData){
+      if(item.name == this.selectedItem){
+        this.valueItem = item.valore;
+      }
+    }
+    console.log(this.selectedItem+": "+this.valueItem);
+    if(this.valoreA != null){
+      this.converter();
+    }
+  }
+
+  doSetValutaDa(item){
+    this.valutaDa = item.detail.value;
+    console.log(this.valutaDa);
+    if(this.valoreA != null){
+      this.converter();
+    }
+  }
+
+  doSetValutaA(item){
+    this.valutaA = item.detail.value;
+    console.log(this.valutaA);
+    if(this.valoreA != null){
+      this.converter();
+    }
+  }
+
+  setValore(item){
+    console.log(item.detail.value);
+    this.valoreDa = +item.detail.value;
+    this.converter();
+  }
+
+  converter(){
+    //this.valoreA = this.valoreDa / this.valueItem;
+    if(this.valutaDa == "Kg"){
+      switch(this.valutaA) {
+        case "Kg":
+          this.valoreA = this.valoreDa;
+          break;
+        case "gr":
+          this.valoreA = this.valoreDa * 1000;
+          break;
+        case "Litri":
+          this.valoreA = this.valoreDa / this.valueItem;
+          break;
+        case "ml":
+          this.valoreA = (this.valoreDa / this.valueItem) * 1000;
+          break;
+      }
+    }
+    if(this.valutaDa == "gr"){
+      switch(this.valutaA) {
+        case "Kg":
+          this.valoreA = this.valoreDa / 1000;
+          break;
+        case "gr":
+          this.valoreA = this.valoreDa;
+          break;
+        case "Litri":
+          this.valoreA = (this.valoreDa / this.valueItem) / 1000;
+          break;
+        case "ml":
+          this.valoreA = this.valoreDa / this.valueItem;
+          break;
+      }
+    }
+    if(this.valutaDa == "Litri"){
+      switch(this.valutaA) {
+        case "Kg":
+          this.valoreA = this.valoreDa * this.valueItem;
+          break;
+        case "gr":
+          this.valoreA = (this.valoreDa * this.valueItem) * 1000;
+          break;
+        case "Litri":
+          this.valoreA = this.valoreDa;
+          break;
+        case "ml":
+          this.valoreA = this.valoreDa * 1000;
+          break;
+      }
+    }
+    if(this.valutaDa == "ml"){
+      switch(this.valutaA) {
+        case "Kg":
+          this.valoreA = (this.valoreDa * this.valueItem) / 1000;
+          break;
+        case "gr":
+          this.valoreA = this.valoreDa * this.valueItem;
+          break;
+        case "Litri":
+          this.valoreA = this.valoreDa / 1000;
+          break;
+        case "ml":
+          this.valoreA = this.valoreDa;
+          break;
+      }
+    }
   }
 
 }
