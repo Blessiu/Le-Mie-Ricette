@@ -20,6 +20,7 @@ export class ConvertitorePage implements OnInit {
     this.inizializzaJSONData();
     this.valutaDa = "Kg";
     this.valutaA = "Litri";
+    this.valueItem = 1;
    }
 
   ngOnInit() {
