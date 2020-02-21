@@ -16,6 +16,34 @@
     <ion-label>Numero di persone...</ion-label>
     <ion-datetime displayFormat="mm" [(ngModel)]="mydate" class="recipe"></ion-datetime>
   </ion-item>
-  
+  <ion-content>
+
+
+    <ion-content>
+      <div class="div-align-center">
+        <ion-button color="warning" (click)="goToAddFrigoItem()">Aggiungi ingredienti</ion-button>
+      </div>
+
+      <ion-content>
+        <div class="div-align-center">
+          <ion-button color="warning" (click)="addSteps()">Step</ion-button>
+        </div>
+
+
+       <div class = "ion-list">
+         <ion-list id="lista">
+
+         </ion-list>
+       </div>
+      
+      <ion-list>
+        <ion-item *ngFor="let item of items">
+          {{item}}
+          <div class="item-note" slot="end">
+            <ion-icon name="close" (click)="deleteElement(item)" color="danger"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+    
 </ion-content>
 <app-toolbar></app-toolbar>

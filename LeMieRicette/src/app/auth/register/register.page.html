@@ -18,7 +18,7 @@
       <ion-input placeholder="Last Name" [(ngModel)]="user" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-label><ion-icon name="mail"></ion-icon></ion-label>
       <ion-input placeholder="Email" [(ngModel)]="email" type="text"></ion-input>
     </ion-item>
     <ion-item>
@@ -28,7 +28,10 @@
     <div class="btn-center-align">
       <ion-button color="danger" shape="round" (click)="Registrati()">Register</ion-button><br>
       <!--<ion-button color="primary" shape="round" routerLink="/home">Sign In</ion-button><br>-->
-      Already have an account?
+      <div class="ion-text-center">
+        <h3>Already have an acount?</h3>
+        
+      </div>
       <ion-button color="danger" shape="round" (click)="back()">Login</ion-button><br>
       <a routerLink="/forgot">Forgot Password?</a>
     </div>
