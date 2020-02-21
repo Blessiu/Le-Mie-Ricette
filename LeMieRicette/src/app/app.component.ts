@@ -23,8 +23,13 @@ export class AppComponent {
       icon: 'options'
     },
     {
-      title: 'Login',
+      title: 'Login/Logout',
       url: '/login',
+      icon: 'key'
+    },
+    {
+      title: 'Profilo',
+      url: '/profilo',
       icon: 'contact'
     }
   ];

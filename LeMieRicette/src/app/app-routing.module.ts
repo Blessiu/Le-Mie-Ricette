@@ -61,6 +61,14 @@ const routes: Routes = [
   {
     path: 'convertitore',
     loadChildren: () => import('./tab/convertitore/convertitore.module').then( m => m.ConvertitorePageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'profilo',
+    loadChildren: () => import('./profilo/profilo.module').then( m => m.ProfiloPageModule)
   }
 
 

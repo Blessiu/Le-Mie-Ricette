@@ -8,6 +8,14 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-label><ion-icon name="pizza"></ion-icon></ion-label>
+    <ion-input placeholder="Recipe..." [(ngModel)]="user" type="text" class="recipe"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Numero di persone...</ion-label>
+    <ion-datetime displayFormat="mm" [(ngModel)]="mydate" class="recipe"></ion-datetime>
+  </ion-item>
+  
 </ion-content>
 <app-toolbar></app-toolbar>

@@ -17,4 +17,7 @@ export class LoginPage implements OnInit {
     console.log('Username: ' + this.user + ' Password: ' + this.pass);
     this.routes.navigateByUrl('home');
   }
+  formRegister(){
+    this.routes.navigate(['/register']);
+  }
 }
