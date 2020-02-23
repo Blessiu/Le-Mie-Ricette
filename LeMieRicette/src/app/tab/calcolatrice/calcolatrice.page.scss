@@ -19,7 +19,7 @@ html,
         border-radius: 10px;
         box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.5);
         .header {
-            background-color: #000;
+            background-color: #7d7d7d;
             height: 120px;
             border-radius: 10px 10px 0 0;
             .window {
@@ -45,19 +45,19 @@ html,
                 }
             }
             .input {
-                background-color: #ff0300;
-                color: #ffffff;
+                background-color: #f3f3f3;
+                color: #7d7d7d;
 
                 padding: 10px 30px;
                 font-size: 28px;
                 span {
 					text-align: right;
-                    color: #ffffff;
+                    color: #7d7d7d;
                 }
             }
         }
         .keys {
-            background: linear-gradient(135deg, #3a3a3a, #000000);
+            background: #5d5d5d;//linear-gradient(135deg, #3a3a3a, #000000);
             height: 280px;
             border-radius: 0 0 10px 10px;
             font-size: 24px;
@@ -95,19 +95,18 @@ html,
                         cursor: pointer;
 					}
                     &.action {
-                        background: linear-gradient(60deg, #ff0300, #ffa100);
+                        background: #5d5d5d;//linear-gradient(60deg, #ff0300, #ffa100);
                         border-radius: 0 0 10px 0;
                         color: #ffffff;
-                        box-shadow: 0 25px 60px -10px rgba(255, 10, 0, 0.5);
                     }
 				}
             }
         }
     }
     .dull {
-        font-size: 14px;
+        font-size: 25px;
         font-weight: bold;
-        color: #4a4a4a;
+        color: #ffffff;
     }
     p.credit {
         font-size: 14px;
