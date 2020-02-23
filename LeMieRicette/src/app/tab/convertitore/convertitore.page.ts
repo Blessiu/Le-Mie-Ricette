@@ -15,6 +15,7 @@ export class ConvertitorePage implements OnInit {
   valutaA:string;
   valoreDa:number;
   valoreA:number;
+  result:any;
 
   constructor() {
     this.inizializzaJSONData();
@@ -94,7 +95,6 @@ export class ConvertitorePage implements OnInit {
         this.valueItem = item.valore;
       }
     }
-    console.log(this.selectedItem+": "+this.valueItem);
     if(this.valoreA != null){
       this.converter();
     }
@@ -102,7 +102,6 @@ export class ConvertitorePage implements OnInit {
 
   doSetValutaDa(item){
     this.valutaDa = item.detail.value;
-    console.log(this.valutaDa);
     if(this.valoreA != null){
       this.converter();
     }
@@ -110,14 +109,12 @@ export class ConvertitorePage implements OnInit {
 
   doSetValutaA(item){
     this.valutaA = item.detail.value;
-    console.log(this.valutaA);
     if(this.valoreA != null){
       this.converter();
     }
   }
 
   setValore(item){
-    console.log(item.detail.value);
     this.valoreDa = +item.detail.value;
     this.converter();
   }
@@ -188,6 +185,7 @@ export class ConvertitorePage implements OnInit {
           break;
       }
     }
+    this.result = this.valoreA.toFixed(2);
   }
 
 }

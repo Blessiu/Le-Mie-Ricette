@@ -14,21 +14,28 @@
       <ion-select-option *ngFor="let item of jsonData">{{item.name}}</ion-select-option>
     </ion-select>
   </ion-item>
-  <div>
-    
+
+  <div style="margin-top: 5%;">
     <ion-item>
       <ion-label>Da</ion-label>
       <ion-select value="Kg" (ionChange)="doSetValutaDa($event)">
         <ion-select-option *ngFor="let item of valute">{{item}}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-input placeholder="Valore" type="number" (ionChange)="setValore($event)"></ion-input>
+
+    <ion-item>
+      <ion-input placeholder="Valore..." type="number" (ionChange)="setValore($event)"></ion-input>
+    </ion-item>
+    
     <ion-item>
       <ion-label>A</ion-label>
       <ion-select value="Litri" (ionChange)="doSetValutaA($event)">
         <ion-select-option *ngFor="let item of valute">{{item}}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-label color="primary">{{valoreA}}</ion-label>
   </div>
+  <div class="result">
+    <ion-label>{{result}}</ion-label>
+  </div>
+  
 </ion-content>
