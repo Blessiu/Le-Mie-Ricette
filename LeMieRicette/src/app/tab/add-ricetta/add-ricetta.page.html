@@ -7,43 +7,49 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
   <ion-item>
-    <ion-label><ion-icon name="pizza"></ion-icon></ion-label>
-    <ion-input placeholder="Recipe..." [(ngModel)]="user" type="text" class="recipe"></ion-input>
+    <ion-label><ion-icon name="clipboard"></ion-icon></ion-label>
+    <ion-input placeholder="Nome della ricetta" [(ngModel)]="nameOfRicetta" type="text"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Numero di persone...</ion-label>
-    <ion-datetime displayFormat="mm" [(ngModel)]="mydate" class="recipe"></ion-datetime>
+    <ion-label><ion-icon name="people"></ion-icon></ion-label>
+    <ion-input placeholder="Per quante persone?" [(ngModel)]="numOfPerson" type="number"></ion-input>
   </ion-item>
-  <ion-content>
+  <ion-item>
+    <ion-label><ion-icon name="basket"></ion-icon><a style="color: #8c8c8c;"> Portata</a></ion-label>
+    <ion-select value="Antipasto" (ionChange)="setTypeOfRicetta($event)">
+      <ion-select-option *ngFor="let item of typeOfRicettaArray">{{item}}</ion-select-option>
+    </ion-select>
+  </ion-item>
 
+  <div class="div-align-center">
+    <h1><ion-label color="medium">INGREDIENTI</ion-label></h1>
+  </div>
 
-    <ion-content>
-      <div class="div-align-center">
-        <ion-button color="warning" (click)="goToAddFrigoItem()">Aggiungi ingredienti</ion-button>
-      </div>
+  <ion-list>
+    <ion-item *ngFor="let item of typeOfRicettaArray">{{item}}</ion-item>
+  </ion-list>
 
-      <ion-content>
-        <div class="div-align-center">
-          <ion-button color="warning" (click)="addSteps()">Step</ion-button>
-        </div>
+  <ion-button expand="block" color="danger">Aggiungi ingredienti +</ion-button>
 
+  <div class="div-align-center">
+    <h1><ion-label color="medium">STEP</ion-label></h1>
+  </div>
 
-       <div class = "ion-list">
-         <ion-list id="lista">
+  <ion-list>
+      <ion-card *ngFor="let item of steps">
+        <ion-card-header>
+          <ion-card-title>{{item.numOfStep}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{item.descrizione}}
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
 
-         </ion-list>
-       </div>
-      
-      <ion-list>
-        <ion-item *ngFor="let item of items">
-          {{item}}
-          <div class="item-note" slot="end">
-            <ion-icon name="close" (click)="deleteElement(item)" color="danger"></ion-icon>
-          </div>
-        </ion-item>
-      </ion-list>
-    
+  <ion-button expand="block" color="danger">Aggiungi step +</ion-button>
+  
 </ion-content>
 <app-toolbar></app-toolbar>

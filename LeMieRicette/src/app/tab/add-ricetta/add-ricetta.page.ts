@@ -7,47 +7,42 @@ import { IonItemSliding } from '@ionic/angular';
   styleUrls: ['./add-ricetta.page.scss'],
 })
 export class AddRicettaPage implements OnInit {
-  private step : number = 0;
-  public items: string[] = [];
-  
+  typeOfRicettaArray: string[] = ["Antipasto", "Primo", "Secondo", "Contorno", "Dolce"];
+  typeOfRicetta: string;
+  steps:any[];
   
   constructor(private routes:Router) {
-     
+     this.typeOfRicetta = "Antipasto";
+     this.inizializzaSteps();
   }
-  
-  addIngredient(ingredient:string){
-    this.items.push(ingredient);
-
-    for(var i = 0; i<this.items.length;i++){
-     
-      var button = document.createElement("button");
-      button.innerHTML=ingredient;
-      var anchor = document.getElementById("lista");
-      anchor.appendChild(button);
-    }
-}
-
-
-  deleteElement(item:string){
-    this.items.splice(this.items.indexOf(item), 1 );
-  }
-
-  goToAddFrigoItem(){
-    this.routes.navigateByUrl('add-frigo-item');
-  }
-
-  addSteps(){
-    this.step=this.step+1;
-    var text = document.createElement("ion-input");
-    text.setAttribute("type","text");
-    text.setAttribute("placeholder","Step numero " + this.step);
-    text.setAttribute("class","step");
-    var anchor = document.getElementById("lista");
-    anchor.appendChild(text);
-  }
-  
 
   ngOnInit() {
+  }
+
+  setTypeOfRicetta(item){
+    this.typeOfRicetta = item.detail.value;
+    console.log(this.typeOfRicetta);
+  }
+
+  inizializzaSteps(){
+    this.steps = [
+      {
+        "numOfStep": "Step 1",
+        "descrizione": "Far bollire l'acqua"
+      },
+      {
+        "numOfStep": "Step 2",
+        "descrizione": "Buttare la pasta"
+      },
+      {
+        "numOfStep": "Step 3",
+        "descrizione": "Scolare la pasta"
+      },
+      {
+        "numOfStep": "Step 4",
+        "descrizione": "Servire il piatto"
+      }
+    ];
   }
   
 }
