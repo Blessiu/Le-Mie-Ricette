@@ -20,8 +20,17 @@
     <div class="btn-center-align">
       <ion-button color="danger" shape="round" (click)="signIn()">Sign In</ion-button><br>
       <!--<ion-button color="primary" shape="round" routerLink="/home">Sign In</ion-button><br>-->
-      <ion-button color="danger" shape="round" (click)="formRegister()">Registrati</ion-button><br>
-      <a routerLink="/forgot">Forgot Password?</a>
+      
+      <table>
+        <tr>
+          <td class="start">
+            <a routerLink="/forgot">Forgot Password?</a>
+          </td>
+          <td class="end">
+            <a routerLink="/register">Registrati</a>
+          </td>
+        </tr>
+      </table>
     </div>
   </ion-list>
 </ion-content>

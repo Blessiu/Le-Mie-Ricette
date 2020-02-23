@@ -32,3 +32,15 @@ ion-list{
 :host{
     --min-height: 39px;
 }
+
+.start{
+    text-align: left;
+}
+.end{
+    text-align: right;
+}
+table{
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 3px;
+}

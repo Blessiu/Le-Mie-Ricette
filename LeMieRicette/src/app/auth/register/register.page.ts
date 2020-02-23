@@ -6,6 +6,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  firstName: string;
+  lastName: string;
+  email: string;
+  pass: string;
 
   constructor(private router: Router) { }
 
@@ -14,10 +18,11 @@ export class RegisterPage implements OnInit {
 
   //Register
   Registrati(){
-
-  }
-  back(){
-    this.router.navigate(['/login']);
+    console.log("First name: " + this.firstName);
+    console.log("Last name: " + this.lastName);
+    console.log("Email: " + this.email);
+    console.log("Password: " + this.pass);
+    this.router.navigateByUrl('home');
   }
 
 }
