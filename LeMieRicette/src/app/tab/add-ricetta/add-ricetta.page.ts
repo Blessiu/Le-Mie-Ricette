@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { IonItemSliding } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-ricetta',
   templateUrl: './add-ricetta.page.html',
@@ -10,10 +9,13 @@ export class AddRicettaPage implements OnInit {
   typeOfRicettaArray: string[] = ["Antipasto", "Primo", "Secondo", "Contorno", "Dolce"];
   typeOfRicetta: string;
   steps:any[];
+  step: string;
+  numOfStep: number;
   
   constructor(private routes:Router) {
      this.typeOfRicetta = "Antipasto";
-     this.inizializzaSteps();
+     this.steps = [];
+     this.numOfStep = 0;
   }
 
   ngOnInit() {
@@ -27,22 +29,28 @@ export class AddRicettaPage implements OnInit {
   inizializzaSteps(){
     this.steps = [
       {
-        "numOfStep": "Step 1",
+        "numOfStep": 1,
         "descrizione": "Far bollire l'acqua"
       },
       {
-        "numOfStep": "Step 2",
+        "numOfStep": 2,
         "descrizione": "Buttare la pasta"
       },
       {
-        "numOfStep": "Step 3",
+        "numOfStep": 3,
         "descrizione": "Scolare la pasta"
       },
       {
-        "numOfStep": "Step 4",
+        "numOfStep": 4,
         "descrizione": "Servire il piatto"
       }
     ];
+  }
+
+  sddStep(){
+    this.numOfStep++;
+    this.steps.push({"numOfStep": this.numOfStep, "descrizione": this.step});
+    this.step = "";
   }
   
 }

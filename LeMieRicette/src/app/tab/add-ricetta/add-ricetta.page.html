@@ -41,7 +41,7 @@
   <ion-list>
       <ion-card *ngFor="let item of steps">
         <ion-card-header>
-          <ion-card-title>{{item.numOfStep}}</ion-card-title>
+          <ion-card-title>Step {{item.numOfStep}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           {{item.descrizione}}
@@ -49,7 +49,11 @@
       </ion-card>
   </ion-list>
 
-  <ion-button expand="block" color="danger">Aggiungi step +</ion-button>
-  
+  <ion-item>
+    <ion-textarea placeholder="Inserisci lo step..." [(ngModel)]="step"></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" color="danger" (click)="sddStep()">Aggiungi Step</ion-button>
+
+  <ion-button expand="block" color="success">Conferma ricetta</ion-button>
 </ion-content>
 <app-toolbar></app-toolbar>
