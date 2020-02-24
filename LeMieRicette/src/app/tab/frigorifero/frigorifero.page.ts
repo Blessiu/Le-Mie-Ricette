@@ -9,7 +9,7 @@ declare var window;
 export class FrigoriferoPage implements OnInit {
   public items: string[] = [];
   constructor(private routes: Router) {
-    window.frigorifero = this;
+  window.frigorifero = this;
   }
 
   addIngredient(ingredient:string){

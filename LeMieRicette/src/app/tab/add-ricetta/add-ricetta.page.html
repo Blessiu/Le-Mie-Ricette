@@ -29,10 +29,17 @@
   </div>
 
   <ion-list>
-    <ion-item *ngFor="let item of typeOfRicettaArray">{{item}}</ion-item>
+    <ion-item *ngFor="let item of ingredienti">
+      {{item}}
+      <div class="item-note" slot="end">
+        <ion-icon name="close" (click)="deleteElement(item)" color="danger"></ion-icon>
+      </div>
+    </ion-item>
   </ion-list>
 
-  <ion-button expand="block" color="danger">Aggiungi ingredienti +</ion-button>
+<!-- Aggiungi ingrediente -->
+  <ion-button expand="block" color="danger" (click)="listIngredienti()">Aggiungi ingredienti +</ion-button>
+
 
   <div class="div-align-center">
     <h1><ion-label color="medium">STEP</ion-label></h1>
