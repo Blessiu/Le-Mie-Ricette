@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: 'add-ricetta',
     loadChildren: () => import('./tab/add-ricetta/add-ricetta.module').then( m => m.AddRicettaPageModule)
-  },  {
+  },
+  {
     path: 'add-frigo-item',
     loadChildren: () => import('./tab/add-frigo-item/add-frigo-item.module').then( m => m.AddFrigoItemPageModule)
   },
@@ -69,7 +70,8 @@ const routes: Routes = [
   {
     path: 'profilo',
     loadChildren: () => import('./profilo/profilo.module').then( m => m.ProfiloPageModule)
-  }
+  },
+  
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-le-mie-ricette',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeMieRicettePage implements OnInit {
 
-  constructor() { }
+  constructor(private routes: Router) { }
+
+  goToSearch(){
+    this.routes.navigateByUrl('search');
+  }
 
   ngOnInit() {
   }

@@ -2,11 +2,36 @@
   <ion-toolbar>
       <ion-buttons slot="start">
         <ion-menu-button color="dark"></ion-menu-button>
-      </ion-buttons>
+      </ion-buttons>      
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card class="card">
+        <ion-card-header>
+          <ion-img src="../assets/carbonara.jpg" ></ion-img>
+          <ion-card-subtitle class="giorno">Ricetta del giorno</ion-card-subtitle>
+          <ion-card-title>Carbonara</ion-card-title>
+        </ion-card-header>
+      </ion-card> 
+    <br>
+  
+    <div style="text-align: center">
+      <label class="base">Le nostre ricette base</label>
+    </div>  
+    <br>     
+    <!--slider-->
+    <ion-slides [options]="sliderConfig" scrollbar="true" pager="true"> 
+      <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <ion-img src="../assets/carbonara.jpg" style="width: 200px; height: auto;"></ion-img>
+                <ion-card-subtitle>Primo</ion-card-subtitle>
+                <ion-card-title>Carbonara</ion-card-title>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
 <app-toolbar></app-toolbar>
